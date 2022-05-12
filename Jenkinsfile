@@ -32,7 +32,7 @@ stages {
      }
     stage('Jmeter test') {
          steps {
-               sh "/opt/jmeter/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t webapp/src/main/webapp/jmeter/Testing.jmx -p webapp/src/main/webapp/jmeter/PetStore_LoadTest.properties -JTOTAL_THREADS=2 -JTEST_DURATION=60 -l MyRun1.jtl"
+               sh "/opt/jmeter/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=xml -n -t webapp/src/main/webapp/jmeter/Testing.jmx -l MyRun1.jtl"
                step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl'])
               //sh "/opt/jmeter/bin/jmeter -Jjmeter.save.saveservice.output_format=xml -n -t src/main/jmeter/Testing.jmx -l src/main/jmeter/JMeter.jtl -e -o src/main/jmeter/report/output"
               //sh "/opt/jmeter/bin/jmeter.sh -Jjmeter.save.saveservice.output_format=html -Jjmeter.save.saveservice.output_format=xml -n -t src/main/jmeter/Testing.jmx -l src/main/jmeter/MyRun1.jtl"
