@@ -20,7 +20,7 @@ stages {
             script
              {
                  //step([$class: 'WsCleanup']
-                 checkout([$class: 'WsCleanup', $class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/poornima4824/java-complete-project.git']]])
+                 checkout([$class: 'WsCleanup', $class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/poornima4824/java-jmeter.git']]])
             }
              
          }
